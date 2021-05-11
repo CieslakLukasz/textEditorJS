@@ -19,7 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const reader = new FileReader();
       reader.onload = (e) => {
         const parsedObject = JSON.parse(e.target.result);
+        if(parsedObject.text){
         editor.innerHTML = parsedObject.text;
+        }else{
+          editor.innerHTML = 'Please load file created with this editor';
+        }
       };
       reader.readAsText(e.target.files[0]);
     });
