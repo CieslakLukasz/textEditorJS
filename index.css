@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+
+#title {
+    text-transform: uppercase;
+}
+
+body {
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#editor {
+    background-color: white;
+    padding: 3px;
+    margin-top: 5px;
+    min-height: 300px;
+    border: 1px solid grey;
+    border-radius: 1%;
+}
+
+button {
+    width: 50px;
+    height: 30px;
+    border-radius: 10%;
+    font-weight: bold;
+    border: 2px solid grey outset;
+}
+button:hover {
+    background-color: lightgrey;
+    border: 2px inset;
+    cursor: pointer;
+}
+
+
+.container {
+    width: 90vw;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
