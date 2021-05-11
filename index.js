@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const save = document.querySelector("#save");
 
   editor.setAttribute("contentEditable", "true");
+  editor.focus();
 
   //after clicking 'Load' button we need to trigger input type file:
   load.addEventListener("click", () => {
@@ -42,17 +43,17 @@ document.addEventListener("DOMContentLoaded", () => {
     link.click();
   });
 
-  // I used execCommand to let user format contenteditable #editor div
+  // we used execCommand to let user format contenteditable #editor div
   const format = (aCommandName) => {
     document.execCommand(aCommandName, false);
   };
 
 
-
-
+  //to not lose focus / selection in our editor we trigger our format() on mousedown not on click, preventing clicking itself with preventDefault()
   editBtns.forEach((el) => {
-    el.addEventListener("click", () => {
-       format(el.name);
+    el.addEventListener("mousedown", (e) => {
+      format(el.name);
+      e.preventDefault();
     });
   });
 });
