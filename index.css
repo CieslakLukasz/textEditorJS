@@ -18,6 +18,8 @@ body {
     background-color: white;
     padding: 3px;
     margin-top: 5px;
+    margin-bottom:5px;
+    width: 100%;
     min-height: 300px;
     border: 1px solid grey;
     border-radius: 1%;
@@ -38,10 +40,25 @@ button:hover {
 
 .container {
     width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+@media (max-width:576px){
+    #editor {
+        min-height: 200px;
+    }
+
+    .container {
+        flex-direction: column-reverse;
+    }
 }
